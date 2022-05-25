@@ -87,7 +87,7 @@ app.get('/v1/ownerOf/:address/:tokenId',cache('30 seconds'),apiRateLimit, async 
 
   let owner = undefined;
   let resultChain = chain;
-  log.info(`Querying ownership for address: `+address+'; tokenId:',tokenId)
+  log.info(`Querying ownership for address: `+address+'; tokenId: '+tokenId)
   if(chain){
     owner = await getOwnershipOfToken(chain,address,tokenId,pOwner)
   } else{
