@@ -8,11 +8,11 @@
     "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "dist",
     "baseUrl": ".",
-
-    "declaration": true,
+    
+    "declaration": false,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
 
