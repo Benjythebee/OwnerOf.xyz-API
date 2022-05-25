@@ -12,9 +12,10 @@
  *     }
  * 
  * @apiParam {String} address A contract address, a string starting with 0x.
- * @apiParam {Number} tokenId A valid token ID (a number).
- * @apiQuery {String} [potentialOwner] a potential owner of the given NFT. 
- * @apiQuery {Number} [chain] A chain id. It allows quicker response by avoiding querying other chains.
+ * @apiParam {String} tokenId A valid token ID .
+ * 
+ * @apiQuery {String} [potentialOwner] a potential owner of the given NFT. Necessary for ERC1155
+ * @apiQuery {Number} [chain] A chain id. If known, it allows quicker response by avoiding querying other chains.
  * @apiQuery {Boolean} [wantsChain] true to obtain the chain in the result.
  * 
  * @apiSuccess {Boolean} success Whether call was successful or not.

@@ -9,7 +9,7 @@
     "clean": "rimraf dist/*",
     "format": "prettier --write \"src/**/*.ts\"",
     "tsc": "tsc",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean --only=null && tsc",
     "server": "node dist/index.js",
     "postbuild": "cp ./package.json ./package-lock.json ./dist/ && cd dist && npm install --only=production",
     "start": "npm run dev:server",
