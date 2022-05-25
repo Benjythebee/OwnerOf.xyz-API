@@ -1,6 +1,6 @@
 {
   "name": "ownershipcheckerapi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "node": ">=16"
   },
@@ -9,10 +9,10 @@
     "clean": "rimraf dist/*",
     "format": "prettier --write \"src/**/*.ts\"",
     "tsc": "tsc",
-    "build": "npm run clean --only=null && tsc",
+    "build": "npm-run-all clean tsc",
     "server": "node dist/index.js",
     "postbuild": "cp ./package.json ./package-lock.json ./dist/ && cd dist && npm install --only=production",
-    "start": "npm run dev:server",
+    "start": "npm-run-all dev:server",
     "dev:server": "ts-node-dev --respawn --watch ./src -- ./src/index.ts",
     "test": "tape -r ts-node/register ./tests/**/*.ts",
     "test:ci": "tape -r ts-node/register ./tests/**/*.ts | tap-xunit",
