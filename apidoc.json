@@ -1,0 +1,8 @@
+{
+    "name": "Ownerof.xyz",
+    "version": "0.1.0",
+    "description": "OwnerOf.xyz api to obtain owner of an NFT regardless of chain and standard.",
+    "title": "Ownerof.xyz API documentation",
+    "url" : "http://localhost:3000",
+    "sampleUrl":"http://localhost:3000"
+  }
