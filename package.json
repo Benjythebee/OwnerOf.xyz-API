@@ -1,6 +1,7 @@
 {
   "name": "ownershipcheckerapi",
   "version": "0.0.1",
+  "entry":"dist/server.js",
   "engines": {
     "node": ">=16"
   },

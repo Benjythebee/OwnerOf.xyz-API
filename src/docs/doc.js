@@ -27,15 +27,28 @@
  *       "success": true,
  *       "owner": "0xf4b4A58974524E183c275F3c6EA895bC2368E738"
  *     }
+  * @apiSuccessExample Success-Response-wantsChain:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "success": true,
+ *       "owner": "0xf4b4A58974524E183c275F3c6EA895bC2368E738",
+ *       "chain":1
+ *     }
  * 
  * @apiError {Boolean} success Unsuccessful query.
  * @apiError {String} message Error message description
  * 
- * @apiErrorExample Error-Response:
- *     HTTP/1.1 400 OK
+ * @apiErrorExample Error-Response-Invalid-Parameters:
+ *     HTTP/1.1 400 NOTOK
  *     {
  *       "success": false,
  *       "message": "invalid tokenId"
+ *     }
+  * @apiErrorExample Error-Response-Invalid-QueryParams:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "success": false,
+ *       "message": "invalid potentialOwner"
  *     }
  */
  function getOwnerOf() { return; }
