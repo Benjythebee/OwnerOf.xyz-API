@@ -19,7 +19,7 @@
     "test:watch": "tape-watch -r ts-node/register ./tests/**/*.ts",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "docs":"apidoc -i src/ -o public/ -f \".*\\.ts$\" -c apidoc.json"
+    "docs":"apidoc -i src/ -o public/ -c apidoc.json"
   },
   "author": "Benjamin Larcher",
   "license": "MIT",
