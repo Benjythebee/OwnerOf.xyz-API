@@ -33,7 +33,10 @@ app.get('/', function (req: any, res: express.Response) {
 
   res.sendFile(path.join(__dirname, '..','/public/index.html'))
 })
-
+// health
+app.get('/zhealth', function (req: any, res: express.Response) {
+  res.status(200).send('up');
+})
 const apiRateLimit = rateLimit({
   windowMs: 60 * 1000, // 60 seconds
   max: 60,
