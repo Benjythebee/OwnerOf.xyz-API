@@ -25,7 +25,11 @@ const NODE_PORT = process.env.NODE_PORT || 3000
 //     : (req: any, res: any, next: express.NextFunction) => {
 //         next()
 //       }
-app.use(cors());
+// var corsOptions = {
+//   origin: '*',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
+// app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // render home page
