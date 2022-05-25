@@ -19,13 +19,13 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const NODE_PORT = process.env.NODE_PORT || 3000
-const corsConfig =
-  process.env.NODE_ENV === 'production'
-    ? cors()
-    : (req: any, res: any, next: express.NextFunction) => {
-        next()
-      }
-app.use(corsConfig);
+// const corsConfig =
+//   process.env.NODE_ENV === 'production'
+//     ? cors()
+//     : (req: any, res: any, next: express.NextFunction) => {
+//         next()
+//       }
+app.use(cors());
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // render home page
