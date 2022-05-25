@@ -3,8 +3,6 @@
     "lib": ["es2020"],
     "module": "commonjs",
     "target": "es2019",
-    "jsx": "react",
-    "jsxFactory": "h",
     "esModuleInterop": true,
     "strict": true,
     "moduleResolution": "node",
