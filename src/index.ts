@@ -19,17 +19,14 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const NODE_PORT = process.env.NODE_PORT || 3000
-// const corsConfig =
-//   process.env.NODE_ENV === 'production'
-//     ? cors()
-//     : (req: any, res: any, next: express.NextFunction) => {
-//         next()
-//       }
-// var corsOptions = {
-//   origin: '*',
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
-// app.use(cors(corsOptions));
+var corsOptions = {
+  origin: function (origin:any, callback:any) {
+
+    callback(null,{ origin: true })
+  }
+}
+
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // render home page
