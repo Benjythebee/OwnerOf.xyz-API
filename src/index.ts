@@ -6,6 +6,7 @@ import rateLimit from 'express-rate-limit'
 import cors from 'cors'
 // import type * as express from 'express'
 import express from 'express'
+import { Stats } from "express-simple-stats";
 import cache, { noCache } from './cache'
 import { getOwnershipOfToken, isChainSupported, supportedChains } from './lib/ethereum-helpers'
 const log = named('Server')
@@ -25,19 +26,33 @@ var corsOptions = {
     callback(null,{ origin: true })
   }
 }
+// hmm
+const stats = Stats('1234');
 
 app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
+/* POST request to get data will be made at this endpoint. */
+app.use("/stats", stats.router);
+
+// health
+app.get('/zhealth', function (req: any, res: express.Response) {
+  res.status(200).send('up');
+})
+
+app.use(stats.middleware);
 // render home page
 app.get('/', function (req: any, res: express.Response) {
 
   res.sendFile(path.join(__dirname, '..','/public/index.html'))
 })
-// health
-app.get('/zhealth', function (req: any, res: express.Response) {
-  res.status(200).send('up');
+
+// render stats
+app.get('/statslog', async (req: any, res: express.Response)=> {
+  const data = await stats.getDataAsJSON();
+  res.send(data)
 })
+
 const apiRateLimit = rateLimit({
   windowMs: 60 * 1000, // 60 seconds
   max: 60,
